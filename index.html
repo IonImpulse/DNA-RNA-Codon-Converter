@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>DNA/RNA/Codon Converter</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body onload="document.body.style.opacity='1'">
+    <div>
+        <form name="mainform" class="form-horizontal well" onsubmit="return false" method="GET">
+          <legend>
+            <h2>
+              <div id="title">DNA/RNA/Codon Converter</div>
+            </h2>
+          </legend>
+          <div class="row">
+            <label for="uInput">Input:</label>
+            <input type="text" id="uInput" name="uInput" required> 
+          </div>
+          <br>
+          <br>
+          <div class="row">
+            <button type="button" onclick="returnResults()" name="submit_data">Submit</button>
+          </div>
+    
+        </form>
+        <div id="output">
+          <center>
+            <h4 id="results"></h4>
+          </center>
+        </div>
+      </div>
+      <br>
+      <br>
+      <footer>
+        <center>
+          <p>Ethan Vazquez</p>
+        </center>
+      </footer>
+      <script type="text/javascript" src="js/convert.js"></script> 
+</body>
