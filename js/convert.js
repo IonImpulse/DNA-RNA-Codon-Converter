@@ -56,11 +56,15 @@ function getResults(uInput) {
     if (JSON.stringify(check) === JSON.stringify(checkDNA)) {
         DNA = processedInput;
 
+        tDNA = switchTwo(switchTwo(DNA, "A", "T"), "G", "C");
+
         RNA = processedInput.split("T").join("U");
 
         Codon = getCodon(RNA);
     } else if (JSON.stringify(check) === JSON.stringify(checkRNA)) {
         DNA = processedInput.split("U").join("T");
+        
+        tDNA = switchTwo(switchTwo(DNA, "A", "T"), "G", "C");
 
         RNA = processedInput;
 
@@ -69,7 +73,7 @@ function getResults(uInput) {
         return("Sequence is malformed or already in codon form.");
     }
     
-    output = "DNA: " + DNA + "<br>RNA: " + RNA + "<br>Codon: " + Codon;
+    output = "DNA: " + DNA + "<br>tDNA: " + tDNA + "<br><br>RNA: " + RNA + "<br>Codon: " + Codon;
 
     return(output);
 
@@ -98,6 +102,22 @@ function getCodon(RNA) {
     }
 
     output = output.slice(0, -1); 
+
+    return(output);
+}
+
+function switchTwo(str, A, B) {
+    output = "";
+
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == A) {
+            output = output + B;
+        } else if (str.charAt(i) == B) {
+            output = output + A;
+        } else {
+            output = output + str.charAt(i);
+        }
+    }
 
     return(output);
 }
