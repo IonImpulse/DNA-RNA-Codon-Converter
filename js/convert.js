@@ -30,14 +30,14 @@ function getResults(uInput) {
             }
         }
     } else {
-        processedInput = uInput;
+        processedInput = uInput.toUpperCase();
     }
 
     var check = [];
 
     for (var i = 0; i < processedInput.length; i++) {
         if (processedInput.charAt(i) != " ") {
-            check.push(processedInput.charAt(i).toUpperCase());
+            check.push(processedInput.charAt(i));
         }
     }
     
