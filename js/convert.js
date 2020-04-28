@@ -46,6 +46,9 @@ function getResults(uInput) {
 
     check.sort();    
     
+    if (check.length < 4) {
+        return("Sequence is too short to determine type.");
+    }
     var DNA = "";
     var RNA = "";
     var Codon = "";
